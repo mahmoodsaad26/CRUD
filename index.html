@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="./style/all.min.css">
+    <link rel="stylesheet" href="./style/bootstrap.min.css">
+    <link rel="stylesheet" href="./style/main.css">
+</head>
+<body>
+    
+<main class="w-75 mx-auto">
+<section class="">
+
+    <h1 class="">Product mangement system:</h1>
+    <div class="form-inputs">
+        <label for="name" class="pt-2 h4">Product Name: </label>
+        <input type="text" class="form-control" id="name" placeholder="productName..." oninput="validateName(this.value)">
+        <p class="text-danger d-none" id="nameWarning">The name should start with  Char and from 3 to 8 characters</p>
+
+        <label for="name" class="pt-2 h4">Product Price: </label>
+        <input type="number" class="form-control" id="price"  placeholder="productPrice..." oninput="validatePrice(this.value)">
+        <p class="text-danger d-none" id="priceWarning">invalid price</p>
+
+        <label for="category" class="pt-2 h4">Product Category: </label>
+        <input type="text" class="form-control" id="category"  placeholder="productCategory..." oninput="validateCategory(this.value)">
+        <p class="text-danger d-none" id="categoryWarning">you can't add special characters:[!,@,#,$,%,^,&,*] or start with numbers</p>
+
+        <label for="category" class="pt-2 h4">Product Description: </label>
+        <textarea name="" id="desc" class="form-control"  placeholder="productDescription..." ></textarea>
+    </div>
+    <button id="addBtn" class="btn btn-primary my-3" onclick="addProduct()">Add Product</button>
+    <button id="updateBtn" class="btn btn-warning my-3 d-none" onclick="updateProduct()">Update Product</button>
+
+</section>
+
+<section>
+    <input type="text" name="" id="mahmood" class="form-control mb-3" placeholder="Search..." oninput="searchByName(this.value)">
+    <table class="table-dark table ">
+        <thead class="bg-black">
+           <tr>
+            <th>index</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Desc.</th>
+            <th>Update</th>
+            <th>Delete</th>
+           </tr>
+            
+        </thead>
+        <tbody id="tableRow">
+           
+        </tbody>
+    </table>
+
+</section>
+
+
+
+
+</main>
+
+
+
+
+
+
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
